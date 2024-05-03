@@ -73,3 +73,11 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Nous avons décidé de faire ce TP en Nuxt pour : 
+
+## La simplicité de développement : Nous avons choisi Nuxt.js car il est facile à utiliser et permet de construire rapidement notre projet. 
+## Meilleur pour Google : Nuxt.js aide notre Pokédex à apparaître plus facilement dans les ## résultats de recherche, ce qui est important pour que plus de gens le trouvent. 
+## Rapide et réactif : Avec Nuxt.js, notre site fonctionne rapidement, ce qui rend la visite agréable pour les utilisateurs. 
+## Les ressources : Utiliser Nuxt.js nous donne accès à de nombreux outils et une grande communauté pour nous aider (git, youtube, doc) 
+## Fonctionne bien partout : Nuxt.js assure que notre site marche bien que ce soit sur téléphone ou ordinateur, important pour atteindre tout le monde.
