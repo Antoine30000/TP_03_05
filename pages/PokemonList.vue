@@ -5,12 +5,12 @@ export default {
       loading: true,
       pokemonList: [],
       searchQuery: '',
-      maxPokemonToShow: 10 // Maximum number of Pokémon to show in the list
+
     };
   },
   async mounted() {
     try {
-      const response = await $fetch('https://pokeapi.co/api/v2/pokemon?limit=151'); // Fetching first 151 Pokémon
+      const response = await $fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
       this.pokemonList = response.results;
       this.loading = false;
     } catch (error) {
