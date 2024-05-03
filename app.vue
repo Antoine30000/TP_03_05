@@ -1,5 +1,7 @@
+<script>
+  import PokemonList from './pages/PokemonList.vue';
+</script>
 
-import PokemonList from './pages/PokemonList.vue';
 <template>
   <div>
     <NuxtPage/>
