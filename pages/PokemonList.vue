@@ -14,7 +14,7 @@ export default {
       this.pokemonList = response.results;
       this.loading = false;
     } catch (error) {
-      console.error('Erreur lors de la récupération des Pokémon :', error);
+      console.error('Error while loading pokemons :', error);
     }
   },
   computed: {
@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     goToPokemonDetails(pokemonName) {
-      navigateTo(`/PokemonCard/${pokemonName}`)
+      navigateTo(`/pokemonCard/${pokemonName}`)
     }
   }
 };
