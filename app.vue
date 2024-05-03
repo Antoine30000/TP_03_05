@@ -1,5 +1,8 @@
+
+import PokemonList from './pages/PokemonList.vue';
 <template>
   <div>
-    <NuxtWelcome />
+    <NuxtPage/>
+    <PokemonList/>
   </div>
 </template>
