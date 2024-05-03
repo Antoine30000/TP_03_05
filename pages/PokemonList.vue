@@ -4,7 +4,8 @@ export default {
     return {
       loading: true,
       pokemonList: [],
-      searchQuery: ''
+      searchQuery: '',
+      maxPokemonToShow: 10 // Maximum number of Pokémon to show in the list
     };
   },
   async mounted() {
@@ -18,14 +19,12 @@ export default {
   },
   computed: {
     filteredPokemonList() {
-      return this.pokemonList.filter(pokemon => {
-        return pokemon.name.toLowerCase().includes(this.searchQuery.toLowerCase());
-      });
+      return this.pokemonList.filter(pokemon => pokemon.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
     }
   },
   methods: {
     goToPokemonDetails(pokemonName) {
-      this.$router.push(`/pokemon/${pokemonName}`);
+      navigateTo(`/PokemonCard/${pokemonName}`)
     }
   }
 };
@@ -33,17 +32,16 @@ export default {
 
 <template>
   <div>
-    <h1>Liste des Pokémon</h1>
+    <h1>Pokédex</h1>
     <input type="text" v-model="searchQuery" placeholder="Rechercher un Pokémon..." />
-    <div v-if="loading">Chargement...</div>
+    <div v-if="loading">Loading...</div>
     <div v-else>
-      <div v-for="pokemon in filteredPokemonList" :key="pokemon.id" @click="goToPokemonDetails(pokemon.name)">
+      <div v-for="(pokemon, index) in filteredPokemonList.slice(0, 10)" :key="index" @click="goToPokemonDetails(pokemon.name)">
         <div>
           <h2>{{ pokemon.name }}</h2>
           <ul>
             <li v-for="(ability, index) in pokemon.abilities" :key="index">{{ ability.name }}</li>
           </ul>
-          <img :src="`https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png`" alt="pokemon" />
         </div>
       </div>
     </div>
